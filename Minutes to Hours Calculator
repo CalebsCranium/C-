@@ -1,0 +1,17 @@
+using System;
+using static System.Console;
+class HoursAndMinutes
+{
+  static void Main()
+  {
+   int min = 197; //missing semicolon
+   if(min>=60)
+   {
+     WriteLine("{0} minutes is {1} hours and {2} minutes", min, min/60, min%60);
+   }
+   else if (min<60) //missing else if statement
+   {
+      WriteLine ("{0} minutes is {1} minutes",min, min);
+   }
+  }
+}
