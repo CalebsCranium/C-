@@ -1,0 +1,11 @@
+using static System.Console;
+class Lyrics
+{
+   static void Main()
+   {
+     WriteLine("I work in the dead of night");
+     WriteLine("When the roads are quiet and no one is around");
+     WriteLine("To track my moves");
+     WriteLine("You get in, you get done and then you get gone");
+   }
+}
