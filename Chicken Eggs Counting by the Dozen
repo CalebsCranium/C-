@@ -1,0 +1,24 @@
+using System;
+using static System.Console;
+
+class EggsInteractive
+{
+    static void Main()
+    {
+        const int DOZEN = 12;
+
+        WriteLine("Enter the number of eggs for chicken1: ");
+        int chicken1 = int.Parse(ReadLine());
+        WriteLine("Enter the number of eggs for chicken2: ");
+        int chicken2 = int.Parse(ReadLine());
+        WriteLine("Enter the number of eggs for chicken3: ");
+        int chicken3 = int.Parse(ReadLine());
+        WriteLine("Enter the number of eggs for chicken4: ");
+        int chicken4 = int.Parse(ReadLine());
+        int total = chicken1 + chicken2 + chicken3 + chicken4;
+        int dozens = total / DOZEN;
+        int leftover = total % DOZEN;
+
+        WriteLine("{0} eggs is {1} dozen and {2} eggs", total, dozens, leftover);
+    }
+}
