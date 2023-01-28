@@ -1,0 +1,13 @@
+using System;
+
+class InchesToCentimetersInteractive
+{
+    static void Main(string[] args)
+    {
+        const double CM_PER_INCH = 2.54;
+        Console.WriteLine("Enter the measurement in inches: ");
+        double inches = double.Parse(Console.ReadLine());
+        double centimeters = inches * CM_PER_INCH;
+        Console.WriteLine(inches + " inches is " + centimeters + " centimeters.");
+    }
+}
