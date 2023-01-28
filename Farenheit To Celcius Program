@@ -1,0 +1,14 @@
+using System;
+using static System.Console;
+class FahrenheitToCelsius
+{
+   static void Main()
+   {
+     decimal fTemp;
+     decimal cTemp;
+     WriteLine("Give me a temperature in fahrenheit to convert: ");
+     fTemp = decimal.Parse(ReadLine());
+     cTemp = (fTemp - 32) * (5.0m/9.0m);
+     WriteLine("{0} F is {1} C", fTemp.ToString("F1"),cTemp.ToString("F1"));  
+   }
+}
