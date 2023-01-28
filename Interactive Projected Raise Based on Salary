@@ -1,0 +1,20 @@
+using System;
+using static System.Console;
+using System.Globalization;
+class ProjectedRaisesInteractive
+{
+static void Main()
+{
+const double RAISE = 0.04;
+double salary1, salary2, salary3;
+WriteLine("Enter current salary for the first employee:");
+salary1 = double.Parse(ReadLine());
+WriteLine("Enter current salary for the second employee:");
+salary2 = double.Parse(ReadLine());
+WriteLine("Enter current salary for the third employee:");
+salary3 = double.Parse(ReadLine());
+WriteLine("Next year's salary for the first employee will be {0}", (salary1 + salary1 * RAISE).ToString("C", CultureInfo.GetCultureInfo("en-US")));
+WriteLine("Next year's salary for the second employee will be {0}", (salary2 + salary2 * RAISE).ToString("C", CultureInfo.GetCultureInfo("en-US")));
+WriteLine("Next year's salary for the third employee will be {0}", (salary3 + salary3 * RAISE).ToString("C", CultureInfo.GetCultureInfo("en-US")));
+}
+}
