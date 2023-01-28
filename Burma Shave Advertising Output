@@ -1,0 +1,14 @@
+using static System.Console;
+class BurmaShave
+{
+   static void Main()
+   {
+     WriteLine("Burma Shave");
+     WriteLine("The chick");
+     WriteLine("He Wed");
+     WriteLine("Let out a whoop");
+     WriteLine("Felt his chin and");
+     WriteLine("Flew the coop");
+     
+   }
+}
