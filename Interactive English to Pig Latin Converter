@@ -1,0 +1,13 @@
+using System;
+using static System.Console;
+class PigLatin
+{
+    static void Main()
+    {
+        string word;
+        WriteLine("Enter a word: ");
+        word = ReadLine();
+        string pigLatinWord = word.Substring(1) + word[0] + "ay";
+        WriteLine("The Pig Latin version of {0} is {1}", word, pigLatinWord);
+    }
+}
