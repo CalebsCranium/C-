@@ -1,0 +1,27 @@
+using System;
+using static System.Console;
+class TestsInteractive
+{
+   static void Main()
+   {
+    int ttl = 0;
+    WriteLine("Enter a Score: ");//entry 1
+    ttl += int.Parse(ReadLine());
+    WriteLine("Enter a Score:");//entry 2
+    ttl += int.Parse(ReadLine());
+    WriteLine("Enter a Score:");//entry 3
+    ttl += int.Parse(ReadLine());
+    WriteLine("Enter a Score:");//entry 4
+    ttl += int.Parse(ReadLine());
+    WriteLine("Enter a Score:");//entry 5
+    ttl += int.Parse(ReadLine());
+    WriteLine("Enter a Score:");//entry 6
+    ttl += int.Parse(ReadLine());
+    WriteLine("Enter a Score:");//entry 7
+    ttl += int.Parse(ReadLine());
+    WriteLine("Enter a Score:");//entry 8
+    ttl += int.Parse(ReadLine());
+    double avg = ((double) ttl / 8);
+    WriteLine("The average of the scores is {0}", avg.ToString("F2"));
+   }
+}
