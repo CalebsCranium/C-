@@ -1,0 +1,27 @@
+using System;
+using System.Globalization;
+
+class ProjectedRaises
+{
+    static void Main(string[] args)
+    {
+        const double RAISE_PERCENT = 0.04; // 4% raise
+        double employee1 = 25000;
+        double employee2 = 38000;
+        double employee3 = 51000;
+
+        double raise1 = employee1 * RAISE_PERCENT;
+        double raise2 = employee2 * RAISE_PERCENT;
+        double raise3 = employee3 * RAISE_PERCENT;
+
+        double nextYear1 = employee1 + raise1;
+        double nextYear2 = employee2 + raise2;
+        double nextYear3 = employee3 + raise3;
+
+        CultureInfo enUS = CultureInfo.GetCultureInfo("en-US");
+
+        Console.WriteLine("Next year's salary for the first employee will be {0}", nextYear1.ToString("C", enUS));
+        Console.WriteLine("Next year's salary for the second employee will be {0}", nextYear2.ToString("C", enUS));
+        Console.WriteLine("Next year's salary for the third employee will be {0}", nextYear3.ToString("C", enUS));
+    }
+}
