@@ -1,0 +1,20 @@
+{
+    Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune
+}
+class SolarSystem
+{
+    static void Main()
+    {
+        int position;
+        WriteLine("Enter a numeric position: ");
+        position = int.Parse(ReadLine());
+        if (position > 0 && position < 9)
+        {
+            WriteLine("{0} is {1} planet(s) from the sun.", (Planet)(position - 1), position);
+        }
+        else
+        {
+            WriteLine("Invalid input. Please enter a numeric position between 1 and 8.");
+        }
+    }
+}
