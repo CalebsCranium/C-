@@ -1,0 +1,31 @@
+using System;
+using static System.Console;
+
+class CheckDigit
+{
+    static void Main()
+    {
+        int accountNumber;
+        string inputString;
+        WriteLine("Enter a four-digit account number: ");
+        inputString = ReadLine();
+        accountNumber = Convert.ToInt32(inputString);
+        if (inputString.Length == 4)
+        {
+            int firstThreeDigits = accountNumber / 10;
+            int checkDigit = accountNumber % 10;
+            if (checkDigit == firstThreeDigits % 7)
+            {
+                WriteLine("The account number is valid.");
+            }
+            else
+            {
+                WriteLine("Invalid");
+            }
+        }
+        else
+        {
+            WriteLine("Account number invalid - it must have 4 digits.");
+        }
+    }
+}
