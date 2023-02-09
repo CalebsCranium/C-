@@ -1,0 +1,49 @@
+using System;
+
+namespace RockPaperScissors
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] choices = { "rock", "paper", "scissors" };
+            Random ranNumberGenerator = new Random();
+            int randomNumber = ranNumberGenerator.Next(0, 3);
+            string computerChoice = choices[randomNumber];
+
+            Console.WriteLine("Choose rock (r), paper (p), or scissors (s):");
+            string userChoice = Console.ReadLine();
+
+            switch (userChoice)
+            {
+                case "r":
+                    userChoice = "rock";
+                    break;
+                case "p":
+                    userChoice = "paper";
+                    break;
+                case "s":
+                    userChoice = "scissors";
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice. Please enter r, p, or s.");
+                    break;
+            }
+
+            Console.WriteLine("You chose " + userChoice + " and the computer chose " + computerChoice + ".");
+
+            if (userChoice == computerChoice)
+            {
+                Console.WriteLine("It's a tie!");
+            }
+            else if (userChoice == "rock" && computerChoice == "scissors" || userChoice == "scissors" && computerChoice == "paper" || userChoice == "paper" && computerChoice == "rock")
+            {
+                Console.WriteLine("You win!");
+            }
+            else
+            {
+                Console.WriteLine("You lose!");
+            }
+        }
+    }
+}
