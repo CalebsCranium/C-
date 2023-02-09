@@ -1,0 +1,30 @@
+using System;
+
+namespace GuessingGame
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Random ranNumberGenerator = new Random();
+            int randomNumber = ranNumberGenerator.Next(1, 11);
+            int userGuess;
+
+            Console.WriteLine("Guess the number between 1 and 10:");
+            userGuess = Convert.ToInt32(Console.ReadLine());
+
+            if (userGuess == randomNumber)
+            {
+                Console.WriteLine("Congratulations! You guessed the right number: " + randomNumber);
+            }
+            else if (userGuess > randomNumber)
+            {
+                Console.WriteLine("Too High. The number was: " + randomNumber);
+            }
+            else
+            {
+                Console.WriteLine("Too Low. The number was: " + randomNumber);
+            }
+        }
+    }
+}
