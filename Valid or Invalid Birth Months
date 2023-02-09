@@ -1,0 +1,22 @@
+using System;
+using static System.Console;
+
+class CheckMonth
+{
+    static void Main()
+    {
+        int birthMonth;
+        string inputString;
+        WriteLine("Enter your birth month (1-12): ");
+        inputString = ReadLine();
+        birthMonth = Convert.ToInt32(inputString);
+        if (birthMonth >= 1 && birthMonth <= 12)
+        {
+            WriteLine(birthMonth + " is a valid month.");
+        }
+        else
+        {
+            WriteLine("Invalid month");
+        }
+    }
+}
