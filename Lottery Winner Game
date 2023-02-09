@@ -1,0 +1,69 @@
+using System;
+
+namespace Lottery
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Random ranNumberGenerator = new Random();
+            int[] randomNumbers = new int[3];
+            for (int i = 0; i < 3; i++)
+            {
+                randomNumbers[i] = ranNumberGenerator.Next(1, 5);
+            }
+
+            int[] userNumbers = new int[3];
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine("Enter a digit from 1 to 4:");
+                userNumbers[i] = int.Parse(Console.ReadLine());
+            }
+
+            Console.WriteLine("The winning combination was " + string.Join("", randomNumbers));
+
+            int matchingNumbers = 0;
+            int matchingIndex = 0;
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    if (userNumbers[i] == randomNumbers[j])
+                    {
+                        matchingNumbers++;
+                        if (i == j)
+                        {
+                            matchingIndex++;
+                        }
+                    }
+                }
+            }
+
+            int prize = 0;
+            switch (matchingNumbers)
+            {
+                case 1:
+                    prize = 10;
+                    break;
+                case 2:
+                    prize = 100;
+                    break;
+                case 3:
+                    if (matchingIndex == 3)
+                    {
+                        prize = 10000;
+                    }
+                    else
+                    {
+                        prize = 1000;
+                    }
+                    break;
+                default:
+                    prize = 0;
+                    break;
+            }
+
+            Console.WriteLine("You won $" + prize);
+        }
+    }
+}
