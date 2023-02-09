@@ -1,25 +1,33 @@
-   static void Main()
-   {
-     double gpa;
-     int testScore;
-     const double MINGPA = 3.0;
-     const int ADMIN1 = 60, ADMIN2 = 00;
-     string inputString;
-     WriteLine("Enter your Grade Point Average: ");
-     inputString = ReadLine();
-     gpa = Convert.ToDouble(inputString);
-     WriteLine("Enter your Test Score: ");
-     inputString = ReadLine();
-     testScore = Convert.ToInt32(inputString);
-     if (gpa >= MINGPA)
-         if (testScore >= ADMIN1)
-         WriteLine("Accept");
-         else WriteLine("Reject");
-         if (testScore >= ADMIN2)
-         WriteLine("Accept");
+  using System;
+using static System.Console;
 
-         else 
+class Admission
+{
+    static void Main()
+    {
+        double gpa;
+        int testScore;
+        const double MIN_GPA = 3.0;
+        const int MIN_SCORE_1 = 60;
+        const int MIN_SCORE_2 = 80;
+        string inputString;
+        WriteLine("Enter your grade point average: ");
+        inputString = ReadLine();
+        gpa = Convert.ToDouble(inputString);
+        WriteLine("Enter your admission test score: ");
+        inputString = ReadLine();
+        testScore = Convert.ToInt32(inputString);
+        if (gpa >= MIN_GPA && testScore >= MIN_SCORE_1)
+        {
+            WriteLine("Accept");
+        }
+        else if (gpa < MIN_GPA && testScore >= MIN_SCORE_2)
+        {
+            WriteLine("Accept");
+        }
+        else
+        {
             WriteLine("Reject");
-            
-   }
+        }
+    }
 }
