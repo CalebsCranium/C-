@@ -1,0 +1,36 @@
+using System;
+
+class CountVowels
+{
+    static void Main()
+    {
+        Console.Write("Enter a phrase: ");
+        string phrase = Console.ReadLine();
+
+        int count = 0;
+        foreach (char c in phrase)
+        {
+            if (IsVowel(c))
+            {
+                count++;
+            }
+        }
+
+        Console.WriteLine("The phrase contains {0} vowels.", count);
+    }
+
+    static bool IsVowel(char c)
+    {
+        switch (char.ToLower(c))
+        {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+                return true;
+            default:
+                return false;
+        }
+    }
+}
