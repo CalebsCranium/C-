@@ -1,0 +1,23 @@
+using System;
+
+class SumInts
+{
+    static void Main()
+    {
+        int sum = 0;
+        int num;
+
+        do
+        {
+            Console.Write("Enter an integer (999 to quit): ");
+            num = int.Parse(Console.ReadLine());
+
+            if (num != 999)
+            {
+                sum += num;
+            }
+        } while (num != 999);
+
+        Console.WriteLine("The sum of the values entered (not including 999) is: {0}", sum);
+    }
+}
