@@ -1,0 +1,18 @@
+using System;
+
+class SumFiveInts
+{
+    static void Main()
+    {
+        int sum = 0;
+
+        for (int i = 1; i <= 5; i++)
+        {
+            Console.Write("Enter integer {0}: ", i);
+            int num = int.Parse(Console.ReadLine());
+            sum += num;
+        }
+
+        Console.WriteLine("The sum of the five integers is: {0}", sum);
+    }
+}
