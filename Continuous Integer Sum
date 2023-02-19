@@ -1,5 +1,5 @@
 using System;
-
+using static System.Console;
 class SumInts
 {
     static void Main()
@@ -19,5 +19,3 @@ class SumInts
         } while (num != 999);
 
         Console.WriteLine("The sum of the values entered (not including 999) is: {0}", sum);
-    }
-}
