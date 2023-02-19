@@ -1,0 +1,17 @@
+using System;
+
+class WebAddress
+{
+    static void Main()
+    {
+        Console.Write("Enter a business name: ");
+        string name = Console.ReadLine();
+
+        // Remove spaces and convert to title case
+        string webName = string.Join("", name.Split(' ')).ToLower();
+        webName = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(webName);
+
+        // Print suggested web address
+        Console.WriteLine("Suggested web address: www.{0}.com", webName);
+    }
+}
