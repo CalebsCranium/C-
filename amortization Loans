@@ -1,0 +1,68 @@
+// This line imports the System namespace, which contains fundamental classes and base classes that define commonly-used value and reference data types, events and event handlers, interfaces, attributes, and processing exceptions.
+using System;
+
+// This is the beginning of the Program class.
+class Program
+{
+    // This is the Main method of the Program class. It is the entry point for the application.
+    static void Main()
+    {
+        // This is an infinite loop that will keep running until the user chooses to exit the program.
+        while (true)
+        {
+            // This line prints out "Loan Calculator" to the console.
+            Console.WriteLine("Loan Calculator");
+
+            // This line asks the user to enter a title for the loan and stores the user's input in the 'title' variable.
+            Console.Write("Enter a title for the loan: ");
+            string title = Console.ReadLine();
+
+            // This line asks the user to enter the loan amount and stores the user's input in the 'loanAmount' variable.
+            Console.Write("Enter the loan amount: ");
+            double loanAmount = double.Parse(Console.ReadLine());
+
+            // This line asks the user to enter the interest rate and stores the user's input in the 'rate' variable. It also divides the input by 100 to convert it from a percentage to a decimal.
+            Console.Write("Enter the interest rate: ");
+            double rate = double.Parse(Console.ReadLine()) / 100;
+
+            // This line asks the user to enter the number of years and stores the user's input in the 'years' variable.
+            Console.Write("Enter the number of years: ");
+            int years = int.Parse(Console.ReadLine());
+
+            // This line calculates the total number of payments by multiplying the number of years by 12 (since there are 12 months in a year).
+            int numPayments = years * 12;
+
+            // This line calculates the term of the loan using the formula (1 + rate / 12) ^ numPayments.
+            double term = Math.Pow((1 + rate / 12), numPayments);
+
+            // This line calculates the monthly payment amount using the formula loanAmount * rate / 12 * term / (term - 1.0).
+            double paymentAmount = loanAmount * rate / 12 * term / (term - 1.0);
+
+            // This line prints out a loan summary to the console.
+            Console.WriteLine("\nLoan Summary");
+            Console.WriteLine("============");
+            Console.WriteLine("Title: {0}", title);
+            Console.WriteLine("Loan Amount: {0:C}", loanAmount);
+            Console.WriteLine("Interest Rate: {0:P}", rate);
+            Console.WriteLine("Loan Term: {0} years", years);
+            Console.WriteLine("Monthly Payment: {0:C}", paymentAmount);
+
+            // This line initializes the balance of the loan to be the same as the loan amount.
+            double balance = loanAmount;
+
+            // This line initializes the total interest paid to be zero.
+            double totalInterestPaid = 0;
+
+            // This line prints out an amortization schedule to the console using a for loop that iterates through 72 months (6 years).
+            Console.WriteLine("\nAmortization Schedule");
+            Console.WriteLine("=====================");
+            for (int i = 1; i <= 72; i++)
+            {
+                // This line calculates the monthly interest paid using the formula rate / 12 * balance.
+                double monthlyInterest = rate / 12 * balance;
+
+                // This line calculates the principal paid using the formula paymentAmount - monthlyInterest.
+                double principal = paymentAmount - monthlyInterest;
+
+                // This line updates the balance of the loan by subtracting the principal paid.
+                balance -=
