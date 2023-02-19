@@ -1,0 +1,46 @@
+using System;
+using static System.Console;
+class DailyTemps
+{
+    static void Main()
+    {
+        int count = 0;
+        double total = 0;
+        double average = 0;
+        int temp;
+
+        do
+        {
+            Console.Write("Enter a daily high temperature (-20 to 130, 999 to quit): ");
+            if (!int.TryParse(Console.ReadLine(), out temp))
+            {
+                Console.WriteLine("Invalid input. Please enter an integer.");
+                continue;
+            }
+
+            if (temp == 999)
+            {
+                break;
+            }
+
+            if (temp >= -20 && temp <= 130)
+            {
+                count++;
+                total += temp;
+            }
+            else
+            {
+                Console.WriteLine("Valid temperatures range from -20 to 130. Please reenter temperature.");
+            }
+
+        } while (true);
+
+        if (count > 0)
+        {
+            average = total / count;
+        }
+
+        Console.WriteLine($"Number of temperatures entered: {count}");
+        Console.WriteLine($"Average temperature: {average}");
+    }
+}
