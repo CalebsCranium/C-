@@ -1,0 +1,35 @@
+using static System.Console;
+
+class CheckZips
+{
+    static void Main()
+    {
+        string[] zips = { "12789", "54012", "54481", "54982", "60007",
+                          "60103", "60187", "60188", "71244", "90210" };
+
+        // Prompt the user to enter a zip code
+        Write("Enter a zip code: ");
+        string input = ReadLine();
+
+        // Check if the input zip code is in the array
+        bool found = false;
+        foreach (string zip in zips)
+        {
+            if (zip == input)
+            {
+                found = true;
+                break;
+            }
+        }
+
+        // Display a message indicating whether the zip code is in the delivery area
+        if (found)
+        {
+            WriteLine("Delivery to {0} ok", input);
+        }
+        else
+        {
+            WriteLine("Sorry - no delivery to {0}", input);
+        }
+    }
+}
