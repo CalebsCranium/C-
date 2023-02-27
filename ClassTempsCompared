@@ -1,0 +1,80 @@
+6.3
+
+using System;
+using static System.Console;
+
+class TemperaturesComparison
+{
+    static void Main()
+    {
+        const int numTemperatures = 5;
+        const int minTemp = -30;
+        const int maxTemp = 130;
+        int[] temperatures = new int[numTemperatures];
+
+        // Prompt the user to enter the temperatures
+        for (int i = 0; i < numTemperatures; i++)
+        {
+            bool isValidTemp = false;
+            while (!isValidTemp)
+            {
+                Write($"Enter temperature {i + 1}: ");
+                string input = ReadLine();
+                if (int.TryParse(input, out int temp))
+                {
+                    if (temp >= minTemp && temp <= maxTemp)
+                    {
+                        temperatures[i] = temp;
+                        isValidTemp = true;
+                    }
+                    else
+                    {
+                        WriteLine($"Temperature must be between {minTemp} and {maxTemp}");
+                    }
+                }
+                else
+                {
+                    WriteLine("Invalid input. Temperature must be an integer.");
+                }
+            }
+        }
+
+        // Check if temperatures are getting warmer or cooler
+        bool isGettingWarmer = true;
+        bool isGettingCooler = true;
+        for (int i = 1; i < numTemperatures; i++)
+        {
+            if (temperatures[i] > temperatures[i-1])
+            {
+                isGettingCooler = false;
+            }
+            else if (temperatures[i] < temperatures[i-1])
+            {
+                isGettingWarmer = false;
+            }
+        }
+
+        // Display whether temperatures are getting warmer, cooler, or a mix
+        if (isGettingWarmer && !isGettingCooler)
+        {
+            WriteLine("Getting warmer:\t" + string.Join("\t", temperatures));
+        }
+        else if (!isGettingWarmer && isGettingCooler)
+        {
+            WriteLine("Getting cooler:\t" + string.Join("\t", temperatures));
+        }
+        else
+        {
+            WriteLine("It's a mixed bag:\t" + string.Join("\t", temperatures));
+        }
+
+        // Calculate and display the average temperature
+        double sumTemps = 0;
+        foreach (int temp in temperatures)
+        {
+            sumTemps += temp;
+        }
+        double averageTemp = sumTemps / numTemperatures;
+        WriteLine($"Average: {averageTemp}");
+    }
+}
