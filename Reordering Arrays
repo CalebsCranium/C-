@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Sorting
+{
+    static void Main()
+    {
+        // Initialize an empty list to store the user's values
+        List<int> values = new List<int>();
+
+        // Keep asking the user for input until they enter "X"
+        while (true)
+        {
+            Console.Write("Enter a value to be sorted (Type X when done): ");
+            string input = Console.ReadLine();
+
+            // If the user enters "X", break out of the loop
+            if (input.ToUpper() == "X")
+            {
+                break;
+            }
+
+            // Try to parse the user's input as an integer
+            bool parseSuccess = int.TryParse(input, out int value);
+
+            // If parsing succeeded, add the value to the list
+            if (parseSuccess)
+            {
+                values.Add(value);
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. Please enter an integer value or X to finish.");
+            }
+        }
+
+        // Display the original list of values
+        Console.WriteLine("The {0} values entered are:", values.Count);
+        foreach (int value in values)
+        {
+            Console.WriteLine(value);
+        }
+
+        // Sort the list of values and display the sorted list
+        List<int> sortedValues = values.OrderBy(v => v).ToList();
+        Console.WriteLine("The {0} sorted values are:", sortedValues.Count);
+        foreach (int value in sortedValues)
+        {
+            Console.WriteLine(value);
+        }
+    }
+}
