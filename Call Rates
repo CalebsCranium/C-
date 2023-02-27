@@ -1,0 +1,30 @@
+using System;
+using static System.Console;
+using System.Globalization;
+
+class ChatAWhile
+{
+    static void Main()
+    {
+        string[] areaCodes = {"262", "414", "608", "715", "815", "920"};
+        double[] rates = {0.07, 0.10, 0.05, 0.16, 0.24, 0.14};
+
+        Write("Enter area code: ");
+        string areaCode = ReadLine();
+
+        int index = Array.IndexOf(areaCodes, areaCode);
+        if (index == -1)
+        {
+            WriteLine("Sorry - no calls allowed to area {0}", areaCode);
+        }
+        else
+        {
+            double rate = rates[index];
+            Write("Your phone call to area {0} costs {1:C} per minute\n", areaCode, rate);
+            Write("Enter call length in minutes: ");
+            int length = int.Parse(ReadLine());
+            double totalCost = rate * length;
+            Write("For {0} minutes the total is {1:C}\n", length, totalCost);
+        }
+    }
+}
