@@ -1,0 +1,41 @@
+using System;
+using System.Globalization;
+using static System.Console;
+
+class ResortPrices
+{
+    static void Main()
+    {
+        int days;
+        double pricePerNight = 0, total;
+
+        Write("Enter the number of days for your stay: ");
+        days = int.Parse(ReadLine());
+
+        if (days <= 0)
+        {
+            WriteLine("Invalid number of days.");
+        }
+        else if (days <= 2)
+        {
+            pricePerNight = 200.0;
+        }
+        else if (days <= 4)
+        {
+            pricePerNight = 180.0;
+        }
+        else if (days <= 7)
+        {
+            pricePerNight = 160.0;
+        }
+        else
+        {
+            pricePerNight = 145.0;
+        }
+
+        total = days * pricePerNight;
+
+        WriteLine("Price per night is {0}", pricePerNight.ToString("C", CultureInfo.GetCultureInfo("en-US")));
+        WriteLine("Total for {0} night(s) is {1}", days, total.ToString("C", CultureInfo.GetCultureInfo("en-US")));
+    }
+}
