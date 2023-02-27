@@ -1,0 +1,31 @@
+using System;
+using static System.Console;
+
+class TypingGrades
+{
+    static void Main()
+    {
+        Write("Enter the number of words typed: ");
+        int wordsTyped = Convert.ToInt32(ReadLine());
+
+        char grade;
+
+        if (wordsTyped >= 0 && wordsTyped <= 15)
+            grade = 'F';
+        else if (wordsTyped >= 16 && wordsTyped <= 30)
+            grade = 'D';
+        else if (wordsTyped >= 31 && wordsTyped <= 50)
+            grade = 'C';
+        else if (wordsTyped >= 51 && wordsTyped <= 75)
+            grade = 'B';
+        else if (wordsTyped >= 76)
+            grade = 'A';
+        else
+        {
+            WriteLine("Invalid input!");
+            return;
+        }
+
+        WriteLine("Typing {0} words per minute: Grade {1}", wordsTyped, grade);
+    }
+}
